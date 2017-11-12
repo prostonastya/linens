@@ -149,15 +149,25 @@ h1{
 	margin-bottom: 25px;	
 	font-variant: small-caps;
 }
-.about-us h3{
-	padding-top: 65px;
-	font-size: 36px;
+
+.about-us{
 	text-align: center;
 }
+.about-us h3{
+	padding-top: 65px;
+	font-size: 36px;	
+}
 .about-us p{
-	padding: 30px 140px 60px 140px;
+	padding: 30px 140px 30px 140px;
+	font-size: 20px;	
+}
+.about-us ul{
 	font-size: 20px;
-	text-align: center;
+}
+.about-us ul li a:hover{
+	text-decoration: underline;
+	font-size: 22px;
+	color: DarkViolet;
 }
 
 .row {
@@ -331,15 +341,20 @@ footer{
 
   /* CATALOG PAGE START */
 
+.category-wrap{
+	margin-top: 20px;
+}
+
 .catalog-item{
 	  width: 24%;
 	  float: left;
-	  padding: 5px 5px 30px 5px;
+	  padding: 10px 10px 30px 10px;
 	  border: 1px solid transparent;
+	  border-radius: 20px;
 }
 .catalog-item:hover{
 	border: 1px solid DarkViolet;
-	filter: drop-shadow(16px 16px 20px black);
+	filter: drop-shadow(5px 10px 20px black);
 }
 .catalog-img{
 	width: 100%;
@@ -351,27 +366,104 @@ margin-top: 5px;
 text-align: center;
 }
 
+.catalog-description h4{
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: DarkViolet;
+}
+
 .catalog-description span{
 	display: block;
 }
 
 .catalog-price{
-	color: red;
+	color: DarkViolet;
 	font-weight: bold;
 }
 
-.catalog-price input{
+.catalog-price a{
 	margin-left: 5%;
 	padding: 1%;
-    font-size: 18px;
+	font-size: 18px;
+	width: 100px;
+	height: 30px;
     border: 2px outset silver;
 }
 
-.catalog-price input:hover{
+.catalog-price a:hover{
 	border: 2px outset grey;
-}
+} 
   
    /* CATALOG PAGE END */
+
+	/* MODAL WINDOW START */
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	display: none;
+}
+	/*Открытие*/
+.modalDialog:target {
+display: block;
+pointer-events: auto;
+}
+		
+.modalDialog > div {
+width: 400px;
+position: relative;
+margin: 15% auto;
+padding: 5px 20px 15px 50px;
+border-radius: 10px;
+background: #fff;		
+border: 2px solid DarkViolet;
+}
+.modalDialog p, .modalDialog select{
+margin: 10px 0 10px 0;
+}
+
+.modalDialog input, .modalDialog select{
+	border: 1px solid darkviolet;
+	width: 80%;
+	font-size: 16px;
+}
+
+/* .modalDialog input, .modalDialog select{
+	margin: 0 0 10px 0;
+} */
+
+	/*Закрытие окна*/
+.close1 {
+background: #606061;
+color: #FFFFFF;
+line-height: 25px;
+position: absolute;
+right: -12px;
+text-align: center;
+top: -10px;
+width: 24px;
+text-decoration: none;
+font-weight: bold;
+-webkit-border-radius: 12px;
+-moz-border-radius: 12px;
+border-radius: 12px;
+-moz-box-shadow: 1px 1px 3px #000;
+-webkit-box-shadow: 1px 1px 3px #000;
+box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #ff9933; }   
+#send_info{color:#ffffff;font-size: 16px;}
+	/* MODAL WINDOW END */
 
 	/* MANUFACTURE PAGE START */
 
@@ -396,7 +488,7 @@ text-align: center;
 	left: 0;
 	text-align: left;
 	font-size: 0;
-	animation: 30s slidy infinite; 
+	animation: 15s slidy infinite; 
 }
 
 .manufacture{
@@ -532,6 +624,14 @@ text-align: center;
 	}
 	.manufacture iframe{
 		height:280px;
+	}
+
+	.modalDialog > div {
+		width: 250px;		
+		padding: 5px 20px 15px 20px;		
+	}
+	.modalDialog input, .modalDialog select{		
+		width: 100%;
 	}
 }
 
