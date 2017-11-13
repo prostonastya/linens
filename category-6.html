@@ -260,24 +260,34 @@
             </div>                     
         </div>
     </footer>
-     <!-- modal window start -->    
-     <div id="openModal" class="modalDialog">
+    <!-- modal window start -->    
+    <div id="openModal" class="modalDialog">
         <div>
             <a href="#close" title="Close" class="close1">X</a>
-            <span>some text</span>
-            <input type="text" value="write text">
-            <input type="text" value="write text">
+            <h4>Заполните форму заказа</h4>
+            <p>Название модели</p>
+            <input type="text" value="" placeholder="Название модели">
+            <p>Имя</p>
+            <input type="text" value="" placeholder="Имя">
+            <p>Телефон</p>
+            <input type="tel" size="20" required="" placeholder="+38(ХХХ)-ХХХ-ХХ-ХХ">
+            <p>Выберите способ оплаты</p>
+            <select size="1" name="payment">                            
+                <option value="nal">Наличный расчет</option>
+                <option value="beznal">Безналичный расчет</option>
+                <option value="card">Visa и MasterCard</option>
+            </select>
+            <p>Выберите способ доставки</p>
+            <select size="1" name="delivery">
+                <option value="moth-moth">Самовывоз</option>                        
+                <option value="futh-name">«Нова пошта»</option>
+                <option value="moth-name">Мист Экспресс</option>
+                <option value="moth-moth">Адресная доставка по городу</option>
+            </select>
+            <button type="submit">Подтвердить</button>            
         </div>
-        </div>
-        <!-- modal window end -->
-    <script>    
-    const burger = document.getElementsByClassName('burger')[0];
-    const sidebar = document.querySelector('.sidebar');
-
-    burger.addEventListener('click', (()=> {
-        burger.classList.toggle('open');
-        sidebar.classList.toggle('is-hidden');
-    }));    
-    </script>
+    </div>
+    <!-- modal window end -->
+    <script src="js/script.js"></script>
 </body>
 </html>
